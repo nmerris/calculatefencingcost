@@ -1,0 +1,45 @@
+﻿Calculating Cost of a Fence Project
+
+Var length
+Var width
+Var perimeter
+Var numGates
+Var fenceType
+Var costPerFoot
+Var buildingPermitCost
+Var taxRate
+Var taxAmount
+Var finalCost
+Var subTotal
+
+Set buildingPermitCost = 50.00
+Set taxRate = 0.06
+
+Prompt user for yard length
+Get length
+Prompt user for yard width
+Get width
+Prompt user for fence type
+Get fenceType
+Prompt user for number of gates
+Get numGates
+
+If !(0 < numGates < 4)
+	Display message “Must have at least 1, but not more than 3 gates”
+	Prompt user for number of gates
+	Get numGates
+End If
+
+Calculate perimeter = 2 * width + 2 * length
+
+If (fenceType is Wooden)
+	Set costPerFoot = 25
+Else
+	Set costPerFoot = 15
+End IfElse
+
+Calculate subTotal = costPerFoot * perimeter + numGates * 150
+Calculate taxAmount = subTotal * taxRate
+Calculate finalCost = subTotal + taxAmount + buildingPermitCost
+
+Display finalCost to user
