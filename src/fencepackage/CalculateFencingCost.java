@@ -3,7 +3,17 @@ package fencepackage;
 import java.util.Scanner;
 
 public class CalculateFencingCost {
-
+	/**
+	 * This program calculates the cost of a fencing installation.
+	 * The cost depends on various user inputs.
+	 * A final sales estimate is displayed to the terminal.
+	 * 
+	 * @author Nathan Merris
+	 * 
+	 * Input is validated for fence type and number of gates.
+	 */
+	
+	
 	public static void main(String[] args) {
 
 		Scanner scanner = new Scanner(System.in);
@@ -14,8 +24,8 @@ public class CalculateFencingCost {
 		int numGates; // total number of gates, must be 1-3
 		String fenceType = null; // wooden or chain link only
 		int costPerFoot; // depends on fenceType
-		int buildingPermitCost = 50; // always $50
-		double taxRate = 0.06; // always 6%
+		final int buildingPermitCost = 50; // always $50
+		final double taxRate = 0.06; // always 6%
 		double taxAmount; // total tax, buildingPermitCost is not taxed
 		double finalCost; //the grand total
 		double subTotal; // cost of fencing before taxes, does not include buildingPermitCost
