@@ -33,9 +33,9 @@ public class CalculateFencingCost {
 			fenceType = scanner.nextLine();
 			// check that user entered W, w, C, or c
 			// if not, display message and re-prompt
-			if(!fenceType.equalsIgnoreCase("w") && !fenceType.equalsIgnoreCase("c"))
+			if(!isFenceTypeValid(fenceType))
 				System.out.println("Please enter either W or C");
-		} while(!fenceType.equalsIgnoreCase("w") && !fenceType.equalsIgnoreCase("c"));
+		} while(!isFenceTypeValid(fenceType));
 		
 		do {
 			System.out.println("How many gates?");
@@ -66,5 +66,13 @@ public class CalculateFencingCost {
 		System.out.printf("Final cost: $%.2f\n", finalCost);
 		
 	} // main
+	
+	
+	// returns true if fenceType is W, w, C, or c.. false otherwise
+	private static boolean isFenceTypeValid(String fenceType) {
+		return (fenceType.equalsIgnoreCase("w") || fenceType.equalsIgnoreCase("c"));
+	}
+	
+	
 	
 }
